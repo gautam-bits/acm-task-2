@@ -77,8 +77,8 @@ def activation(z, derivative=False):
         
         # TODO
         # return the derivative of the sigmoid activation function
-        return -np.exp(- z )/((1+ np.exp(- z ))**2)
-    else:
+        return -np.exp(- z )/((1+ np.exp(- z ))**2)                # manual derrivative of sigmoid function
+     else:
         
         # TODO
         # return the normal sigmoid activation function
@@ -114,7 +114,7 @@ def cost_function_prime(y_true, y_pred):
     # TODO
     # Calculate the derivative of the cost function
     
-    cost_prime = y_pred - y_true
+    cost_prime = y_pred - y_true                    # diffrentiating the cost function w.r.t. y_pred
     
     return cost_prime
 
@@ -166,7 +166,7 @@ class NeuralNetwork(object):
         Each matrix will be initialized with random values
         """
         self.weights =[np.random.randn(self.size[i], self.size[i-1])*(1 / np.sqrt(self.size[i-1])) for i in range(1, len(self.size))]
-
+                                                                                    # from an article of towards data science
     def forward(self, input):
         '''
         Perform a feed forward computation
